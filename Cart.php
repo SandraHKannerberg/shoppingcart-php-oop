@@ -20,6 +20,12 @@ class Cart
      */
     public function addProduct($product)
     {
+       
+        $cartItem = new CartItem($product, 1);
+        
+        array_push($this->items, $cartItem);
+
+        return $cartItem;
 
     }
 
