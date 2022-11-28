@@ -17,6 +17,7 @@ class Cart
      */
     public function addProduct($product)
     {
+
     }
 
 
@@ -29,6 +30,7 @@ class Cart
     //OBS: Ej antalet unika produkter
     public function getTotalQuantity()
     {
+        
     }
 
     //Skall räkna ihop totalsumman för alla produkter i kundvagnen
