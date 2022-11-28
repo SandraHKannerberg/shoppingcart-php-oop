@@ -25,11 +25,11 @@ echo $cartItem3->getProduct()->getTitle() . "<br>";
 
 //Skriver ut antalet produkter i kundvagnen
 echo "<h3>Antal produkter i kundvagnen: </h3>";
-//echo $cart->getTotalQuantity() . "<br>"; // Detta skall skriva ut 3
+echo $cart->getTotalQuantity() . "<br>"; // Detta skall skriva ut 3
 
 //Skriver ut totalsumman
 echo "<h3>Totalpris för alla produkter i kundvagnen: </h3>";
-//echo $cart->getTotalSum() . "<br>"; // Detta skall skriva ut 6100
+echo $cart->getTotalSum() . "<br>"; // Detta skall skriva ut 6100
 
 //Lägger till 2 till av produkten cartItem2 i kundvagnen
 //$cartItem2->increaseQuantity();
@@ -47,7 +47,7 @@ echo "<h3>Totalpris för alla produkter i kundvagnen efter utökat antal: </h3>"
 
 //Skriver ut antalet produkter i kundvagnen efter borttag
 echo "<h3>Antal produkter i kundvagnen efter borttag av produkt: </h3>";
-//echo $cart->getTotalQuantity() . "<br>"; // Detta skall skriva ut 4
+echo $cart->getTotalQuantity() . "<br>"; // Detta skall skriva ut 4
 
 //Skriver ut totalsumman efter borttag
 echo "<h3>Totalpris för alla produkter i kundvagnen efter borttag av produkt: </h3>";
