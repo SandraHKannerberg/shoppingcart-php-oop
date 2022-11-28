@@ -1,6 +1,5 @@
 <?php
 
-
 class CartItem
 {
     private $product;

@@ -6,6 +6,9 @@ class Cart
     private array $items = [];
 
     //TODO Skriv getter för items
+    public function getItems() {
+        return $this -> items;
+    }
 
     /*
      Skall lägga till en produkt i kundvagnen genom att
