@@ -19,9 +19,9 @@ $cartItem3 = $cart->addProduct($product3, 1);
 
 //Skriver ut namn på produkter i kundvagnen
 echo "<h3>Produkter i kundvagnen:</h3>";
-//echo $cartItem1->getProduct()->getTitle() . "<br>";
-//echo $cartItem2->getProduct()->getTitle() . "<br>";
-//echo $cartItem3->getProduct()->getTitle() . "<br>";
+echo $cartItem1->getProduct()->getTitle() . "<br>";
+echo $cartItem2->getProduct()->getTitle() . "<br>";
+echo $cartItem3->getProduct()->getTitle() . "<br>";
 
 //Skriver ut antalet produkter i kundvagnen
 echo "<h3>Antal produkter i kundvagnen: </h3>";
@@ -43,7 +43,7 @@ echo "<h3>Totalpris för alla produkter i kundvagnen efter utökat antal: </h3>"
 //echo $cart->getTotalSum() . "<br>"; // Detta skall skriva ut 6900
 
 //Tar bort product1 ur kundvagnen
-$cart->removeProduct($product1);
+//$cart->removeProduct($product1);
 
 //Skriver ut antalet produkter i kundvagnen efter borttag
 echo "<h3>Antal produkter i kundvagnen efter borttag av produkt: </h3>";
