@@ -34,6 +34,4 @@ class Product
     public function getInStock() {
         return $this -> inStock;
     }
-    
-
 }
