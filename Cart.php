@@ -21,9 +21,9 @@ class Cart
     public function addProduct($product)
     {
         $cartItem = new CartItem($product, 1);
-        
-        array_push($this->items, $cartItem);
 
+        $this->items[$product->getId()] = $cartItem;
+        
         return $cartItem;
     }
 
@@ -31,8 +31,7 @@ class Cart
     //Skall ta bort en produkt ur kundvagnen (använd unset())
     public function removeProduct($product)
     {
-
-
+        unset($this->items[$product->getId()]);
     }
 
     //Skall returnera totala antalet produkter i kundvagnen
@@ -47,13 +46,13 @@ class Cart
     //VG: Tänk på att ett cartitem kan ha olika quantity
     public function getTotalSum()
     {
-      $cartItemPrice = 0;
+      $calcPrice = 0;
         foreach ($this->items as $item) 
         {
-            $cartItemPrice += $item->getProduct()->getPrice();//för VG så bör det vara att price ska * med quantity för resp. cartitem
+            $calcPrice += $item->getProduct()->getPrice();//för VG så bör det vara att price ska * med quantity för resp. cartitem
         }
 
-        $count = 0+$cartItemPrice;
-        return $count;
+        $totSum = 0+$calcPrice;
+        return $totSum;
     } 
 }

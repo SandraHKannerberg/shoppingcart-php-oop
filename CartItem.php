@@ -26,5 +26,8 @@ class CartItem
     //VG: Det skall inte vara möjligt att utöka så att antalet överstiger produktens $inStock.
     public function increaseQuantity()
     {
+    
+
+
     }
 }
