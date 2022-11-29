@@ -16,17 +16,23 @@ class Cart
      Metoden skall returnera detta cartItem.
 
      VG: Om produkten redan finns i kundvagnen
-     skall istället quantity på cartitem ökas. //Ass.array kan lösa detta inom addProduct ex. $age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+     skall istället quantity på cartitem ökas.
      */
     public function addProduct($product)
     {
         $cartItem = new CartItem($product, 1);
 
-        $this->items[$product->getId()] = $cartItem;
-        
+        /*$cartItem = new CartItem($product, $quantity);
+
+        //if (key has a value) {
+            $this->items[$product->getId()] = $cartItem;//Skapar en ny nyckel eftersom vi redan har en array
+
+        } else {
+            //Öka quantity
+        }*/
+
         return $cartItem;
     }
-
 
     //Skall ta bort en produkt ur kundvagnen (använd unset())
     public function removeProduct($product)
@@ -38,8 +44,14 @@ class Cart
     //OBS: Ej antalet unika produkter
     public function getTotalQuantity()
     {
-        $totQuantity = count($this->items);
-        return $totQuantity;
+        $calcQty = 0;
+        foreach ($this->items as $item) 
+        {
+            $calcQty += $item->getQuantity();
+        }
+
+        $totQty = 0+$calcQty;
+        return $totQty;
     }
 
     //Skall räkna ihop totalsumman för alla produkter i kundvagnen
@@ -49,7 +61,7 @@ class Cart
       $calcPrice = 0;
         foreach ($this->items as $item) 
         {
-            $calcPrice += $item->getProduct()->getPrice();//för VG så bör det vara att price ska * med quantity för resp. cartitem
+            $calcPrice += $item->getProduct()->getPrice() * $item->getQuantity();
         }
 
         $totSum = 0+$calcPrice;

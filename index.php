@@ -32,15 +32,15 @@ echo "<h3>Totalpris för alla produkter i kundvagnen: </h3>";
 echo $cart->getTotalSum() . "<br>"; // Detta skall skriva ut 6100
 
 //Lägger till 2 till av produkten cartItem2 i kundvagnen
-//$cartItem2->increaseQuantity();
-//$cartItem2->increaseQuantity();
+$cartItem2->increaseQuantity();
+$cartItem2->increaseQuantity();
 //Skriver ut antalet produkter i kundvagnen efter utökat antal
-//echo "<h3>Antal produkter i kundvagnen efter utökat antal: </h3>";
-//echo $cart->getTotalQuantity() . "<br>"; // Detta skall skriva ut 5
+echo "<h3>Antal produkter i kundvagnen efter utökat antal: </h3>";
+echo $cart->getTotalQuantity() . "<br>"; // Detta skall skriva ut 5
 
 //Skriver ut totalsumman efter utökat antal
-//echo "<h3>Totalpris för alla produkter i kundvagnen efter utökat antal: </h3>";
-//echo $cart->getTotalSum() . "<br>"; // Detta skall skriva ut 6900
+echo "<h3>Totalpris för alla produkter i kundvagnen efter utökat antal: </h3>";
+echo $cart->getTotalSum() . "<br>"; // Detta skall skriva ut 6900
 
 //Tar bort product1 ur kundvagnen
 $cart->removeProduct($product1);
@@ -86,4 +86,4 @@ foreach ($cart->getItems() as $item) {
 
 
 echo "<h3>Lägger till en fjärde M2 SSD fast det bara finns 3 i lager: </h3>";
-// $cartItem2->increaseQuantity(); //Skall skriva ut "Kan inte lägga till. Slut i lager"
+$cartItem2->increaseQuantity(); //Skall skriva ut "Kan inte lägga till. Slut i lager"

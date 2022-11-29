@@ -23,11 +23,16 @@ class CartItem
     }
 
     //VG: Skall utöka antalet på ett cartItem med 1. 
-    //VG: Det skall inte vara möjligt att utöka så att antalet överstiger produktens $inStock.
+    //VG: Det skall inte vara möjligt att utöka så att antalet överstiger produktens $inStock. 
+    
     public function increaseQuantity()
     {
-    
+        if($this->quantity < $this->product->getInStock()){
 
+            $this->quantity+=1;
 
+        } else {
+            echo "Kan inte lägga till. Slut i lager";
+        }
     }
 }
