@@ -20,16 +20,15 @@ class Cart
      */
     public function addProduct($product)
     {
-        $cartItem = new CartItem($product, 1);
+        $cartItem = $this->items[$product->getId()] ?? null;
+        
+        if ($cartItem === null) 
+        {
+            $cartItem = new CartItem($product, 0);
+            $this->items[$product->getId()] = $cartItem;
+        }
 
-        /*$cartItem = new CartItem($product, $quantity);
-
-        //if (key has a value) {
-            $this->items[$product->getId()] = $cartItem;//Skapar en ny nyckel eftersom vi redan har en array
-
-        } else {
-            //Öka quantity
-        }*/
+        $cartItem->increaseQuantity();
 
         return $cartItem;
     }
